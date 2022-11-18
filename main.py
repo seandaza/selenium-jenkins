@@ -1,21 +1,13 @@
 from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
+
 from selenium.webdriver.chrome.options import Options
-import time
-import smtplib
-import pandas as pd
-from base64 import encode
 from datetime import datetime
 from selenium import webdriver
-from email.mime.text import MIMEText
-from email.mime.image import MIMEImage
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver import ActionChains
-from email.mime.multipart import MIMEMultipart
+
+
 from selenium.webdriver.chrome.options import Options
-from selenium.common.exceptions import NoSuchElementException
+
 
 import chromedriver_autoinstaller
 

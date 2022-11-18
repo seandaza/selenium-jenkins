@@ -3,9 +3,11 @@ pipeline {
   stages {
     stage('Run python') {
       steps {
-        sh 'apt-get update'
-        sh 'apt-get install python3-pip'
-        sh 'pip3 --version'
+        sh 'python3 -m venv venv'
+        sh 'source venv/bin/activate'
+        sh 'pip install -r requirements.txt'
+        sh 'python3 main.py'
+        }
       }
     }
   }

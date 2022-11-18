@@ -1,13 +1,14 @@
 pipeline {
   agent any
+  docker {
+     image 'python:3.7'
+      args '-p 3000:3000'
+    }
   stages {
     stage('Run python') {
       steps {
-        sh 'python3 -m venv venv'
-        sh 'source venv/bin/activate'
-        sh 'pip install -r requirements.txt'
-        sh 'python3 main.py'
-        }
+        sh 'python -m http.server 3000'
       }
     }
   }
+

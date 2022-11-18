@@ -3,10 +3,12 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from datetime import datetime
 from selenium import webdriver
+import time
 from selenium.webdriver.common.by import By
 
 
 from selenium.webdriver.chrome.options import Options
+from webdriver_manager.chrome import ChromeDriverManager
 
 
 #import chromedriver_autoinstaller
@@ -19,7 +21,8 @@ chromeOptions.add_argument("user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebK
 #chromeOptions.add_extension(r'C:\Users\jhand\Buster-Captcha-Solver-for-Humans.crx')
 
 #driver = webdriver.Chrome(options=chromeOptions)
-driver = webdriver.Chrome('./chromedriver.exe', options=chromeOptions)
+driver = webdriver.Chrome(ChromeDriverManager().install())
+#driver = webdriver.Chrome('./chromedriver.exe', options=chromeOptions)
 
 now = datetime.now() 
 year_month_day = now.strftime("%Y-%m-%d")
@@ -33,11 +36,8 @@ driver.get(url)
 driver.maximize_window()
 
 title = driver.find_element(By.XPATH, "//*[@id='comp-kwclfsi1']/h2[1]").text
+time.sleep(5)
 print("Title: ", title)
-
-
-
-
 
 
 driver.quit()

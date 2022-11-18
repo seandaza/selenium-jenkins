@@ -1,7 +1,7 @@
 pipeline {
     agent {
         docker {
-            image 'joyzoursky/python-chromedriver:3.9'
+            image '15174814/scrapy:scrapy'
 
         }
     }

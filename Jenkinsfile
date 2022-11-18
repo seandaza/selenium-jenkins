@@ -7,6 +7,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+                sh 'ls -la'
                 sh 'pip install -r requirements.txt'
             }
         }
@@ -17,3 +18,4 @@ pipeline {
         }
     }
 }
+   

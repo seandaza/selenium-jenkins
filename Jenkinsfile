@@ -1,10 +1,10 @@
 pipeline {
-    agent {
+/*     agent {
         docker {
             image '15174814/scrapy:scrapy'
 
         }
-    }
+    } */
     stages {
         stage('Chrome') {
             steps {

@@ -43,6 +43,7 @@ driver.maximize_window()
 title = driver.find_element(By.XPATH, "//*[@id='comp-kwclfsi1']/h2[1]").text
 time.sleep(15)
 print("Title: ", title)
+print("URL: ", url)
 
 
 driver.quit()

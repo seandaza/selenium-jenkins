@@ -1,11 +1,13 @@
 pipeline {
-    agent {
-        docker {
-            image '15174814/scrapy:scrapy'
 
-        }
-    }
     stages {
+        stage('Image build'){
+            agent {
+            docker {
+                image '15174814/scrapy:scrapy'
+            }
+    }
+        }
         stage('Chrome') {
             steps {
                 sh 'wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb'
